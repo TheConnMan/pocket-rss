@@ -1,6 +1,8 @@
 import * as express from 'express';
 import * as log4js from 'log4js';
 
+import PocketService from './services/PocketService';
+
 var logger = log4js.getLogger();
 
 if (process.env.FLUENTD_HOST) {
@@ -18,6 +20,19 @@ if (process.env.FLUENTD_HOST) {
 }
 
 var app = express();
+
+var pocketService = new PocketService();
+
+app.get('/explore/:category', (req, res) => {
+  pocketService.getExplorePath(req.params.category).then(rss => {
+    logger.info('Generated feed for ' + req.params.category);
+    res.set('Content-Type', 'text/xml');
+    res.send(rss);
+  }).catch(e => {
+    logger.error('Unable to generate RSS feed for ' + req.params.category, e);
+    res.sendStatus(500);
+  });
+});
 
 app.get('/version', (req, res) => {
   res.send({
