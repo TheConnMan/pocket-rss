@@ -1,0 +1,13 @@
+sudo: required
+
+language: node_js
+node_js:
+  - "6"
+
+install: true
+
+services:
+  - docker
+
+script:
+  - chmod a+x travis-build.sh && ./travis-build.sh

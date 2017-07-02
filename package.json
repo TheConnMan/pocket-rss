@@ -1,0 +1,55 @@
+{
+  "name": "pocket-rss",
+  "version": "0.1.0",
+  "description": "RSS feed for Pocket articles",
+  "scripts": {
+    "start": "node js/index.js",
+    "compile": "tsc -p tsconfig.json",
+    "test": "nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheConnMan/pocket-rss.git"
+  },
+  "keywords": [
+    "npm",
+    "rss"
+  ],
+  "author": "TheConnMan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheConnMan/pocket-rss/issues"
+  },
+  "homepage": "https://github.com/TheConnMan/pocket-rss#readme",
+  "devDependencies": {
+    "@types/express": "^4.0.35",
+    "@types/mocha": "^2.2.41",
+    "@types/sinon": "^2.2.2",
+    "mocha": "^3.4.2",
+    "nyc": "^10.3.2",
+    "sinon": "^2.3.2",
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.3"
+  },
+  "nyc": {
+    "include": [
+      "ts/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "dependencies": {
+    "@types/rss": "0.0.27",
+    "express": "^4.15.3",
+    "fluent-logger": "github:theconnman/fluent-logger-node",
+    "log4js": "^1.1.1",
+    "rss": "^1.2.2"
+  }
+}
