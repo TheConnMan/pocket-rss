@@ -26,6 +26,7 @@
     "@types/express": "^4.0.35",
     "@types/mocha": "^2.2.41",
     "@types/sinon": "^2.2.2",
+    "@types/statsd-client": "^0.1.30",
     "mocha": "^3.4.2",
     "nyc": "^10.3.2",
     "sinon": "^2.3.2",
@@ -54,6 +55,7 @@
     "log4js": "^1.1.1",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
-    "rss": "^1.2.2"
+    "rss": "^1.2.2",
+    "statsd-client": "^0.4.0"
   }
 }
