@@ -36,7 +36,8 @@ class PocketService {
         guid: article.id,
         url: article.url,
         description: article.excerpt,
-        date: article.date
+        date: article.date,
+        author: article.domain
       })
     });
     return feed.xml();
